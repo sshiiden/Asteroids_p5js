@@ -4,6 +4,7 @@
  * @date 23-04-2023
  */
 function setup() {
+    frameRate(1000);
     createCanvas(windowWidth, windowHeight);
 
     // Create player ship
@@ -28,4 +29,8 @@ function randPointOutside(startX, startY, endX, endY) {
 function draw() {
     background(0)
     SpaceObject.process();
+
+    let fps = frameRate();
+    textSize(32);
+    text("FPS: " + fps.toFixed(0), 50, 50);
 }
